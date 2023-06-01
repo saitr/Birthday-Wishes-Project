@@ -1,0 +1,18 @@
+[2023-05-31T04:25:59.256+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-30T00:00:00+00:00 [queued]>
+[2023-05-31T04:25:59.314+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-30T00:00:00+00:00 [queued]>
+[2023-05-31T04:25:59.314+0000] {taskinstance.py:1308} INFO - Starting attempt 11 of 11
+[2023-05-31T04:25:59.374+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): send_birthday_emails> on 2023-05-30 00:00:00+00:00
+[2023-05-31T04:25:59.380+0000] {standard_task_runner.py:57} INFO - Started process 5282 to run task
+[2023-05-31T04:25:59.397+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'birthday_email_dag', 'send_birthday_emails', 'scheduled__2023-05-30T00:00:00+00:00', '--job-id', '241', '--raw', '--subdir', 'DAGS_FOLDER/birthday_dag.py', '--cfg-path', '/tmp/tmpf612x74w']
+[2023-05-31T04:25:59.408+0000] {standard_task_runner.py:85} INFO - Job 241: Subtask send_birthday_emails
+[2023-05-31T04:25:59.510+0000] {task_command.py:410} INFO - Running <TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-30T00:00:00+00:00 [running]> on host ce3f9f28322a
+[2023-05-31T04:25:59.678+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='birthday_email_dag' AIRFLOW_CTX_TASK_ID='send_birthday_emails' AIRFLOW_CTX_EXECUTION_DATE='2023-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='11' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-05-30T00:00:00+00:00'
+[2023-05-31T04:25:59.680+0000] {sql.py:262} INFO - Executing: SELECT employee_email, employee_name FROM employee WHERE DATE_FORMAT(employee_date_of_birth, '%m-%d') = DATE_FORMAT(NOW(), '%m-%d')
+[2023-05-31T04:25:59.693+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-31T04:26:00.058+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-31T04:26:00.064+0000] {sql.py:375} INFO - Running statement: SELECT employee_email, employee_name FROM employee WHERE DATE_FORMAT(employee_date_of_birth, '%m-%d') = DATE_FORMAT(NOW(), '%m-%d'), parameters: None
+[2023-05-31T04:26:00.070+0000] {sql.py:384} INFO - Rows affected: 4
+[2023-05-31T04:26:18.805+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-05-31T04:26:19.800+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=birthday_email_dag, task_id=send_birthday_emails, execution_date=20230530T000000, start_date=20230531T042559, end_date=20230531T042619
+[2023-05-31T04:26:20.262+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-05-31T04:26:20.817+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,45 @@
+[2023-05-30T09:34:35.338+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-26T00:00:00+00:00 [queued]>
+[2023-05-30T09:34:35.379+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-26T00:00:00+00:00 [queued]>
+[2023-05-30T09:34:35.379+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-05-30T09:34:35.510+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): send_birthday_emails> on 2023-05-26 00:00:00+00:00
+[2023-05-30T09:34:35.534+0000] {standard_task_runner.py:57} INFO - Started process 229 to run task
+[2023-05-30T09:34:35.605+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'birthday_email_dag', 'send_birthday_emails', 'scheduled__2023-05-26T00:00:00+00:00', '--job-id', '155', '--raw', '--subdir', 'DAGS_FOLDER/birthday_dag.py', '--cfg-path', '/tmp/tmpwx4boeli']
+[2023-05-30T09:34:35.614+0000] {standard_task_runner.py:85} INFO - Job 155: Subtask send_birthday_emails
+[2023-05-30T09:34:36.638+0000] {task_command.py:410} INFO - Running <TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-26T00:00:00+00:00 [running]> on host 5127c1aa2633
+[2023-05-30T09:34:37.051+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='birthday_email_dag' AIRFLOW_CTX_TASK_ID='send_birthday_emails' AIRFLOW_CTX_EXECUTION_DATE='2023-05-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-05-26T00:00:00+00:00'
+[2023-05-30T09:34:37.054+0000] {sql.py:262} INFO - Executing: SELECT employee_email FROM employee WHERE DATE_FORMAT(employee_date_of_birth, '%m-%d') = DATE_FORMAT(NOW(), '%m-%d')
+[2023-05-30T09:34:37.125+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-30T09:34:37.559+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-30T09:34:37.580+0000] {sql.py:375} INFO - Running statement: SELECT employee_email FROM employee WHERE DATE_FORMAT(employee_date_of_birth, '%m-%d') = DATE_FORMAT(NOW(), '%m-%d'), parameters: None
+[2023-05-30T09:34:37.617+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-05-30T09:34:42.217+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-05-30T09:34:42.256+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=birthday_email_dag, task_id=send_birthday_emails, execution_date=20230526T000000, start_date=20230530T093435, end_date=20230530T093442
+[2023-05-30T09:34:42.365+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-05-30T09:34:42.453+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-05-30T13:51:49.957+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-26T00:00:00+00:00 [queued]>
+[2023-05-30T13:51:50.007+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-26T00:00:00+00:00 [queued]>
+[2023-05-30T13:51:50.009+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-05-30T13:51:50.065+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): send_birthday_emails> on 2023-05-26 00:00:00+00:00
+[2023-05-30T13:51:50.073+0000] {standard_task_runner.py:57} INFO - Started process 235 to run task
+[2023-05-30T13:51:50.081+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'birthday_email_dag', 'send_birthday_emails', 'scheduled__2023-05-26T00:00:00+00:00', '--job-id', '192', '--raw', '--subdir', 'DAGS_FOLDER/birthday_dag.py', '--cfg-path', '/tmp/tmp8ztig5yi']
+[2023-05-30T13:51:50.084+0000] {standard_task_runner.py:85} INFO - Job 192: Subtask send_birthday_emails
+[2023-05-30T13:51:50.248+0000] {task_command.py:410} INFO - Running <TaskInstance: birthday_email_dag.send_birthday_emails scheduled__2023-05-26T00:00:00+00:00 [running]> on host 8b3cbb1b106a
+[2023-05-30T13:51:50.652+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='birthday_email_dag' AIRFLOW_CTX_TASK_ID='send_birthday_emails' AIRFLOW_CTX_EXECUTION_DATE='2023-05-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-05-26T00:00:00+00:00'
+[2023-05-30T13:51:50.657+0000] {sql.py:262} INFO - Executing: SELECT employee_email, employee_name FROM employee WHERE DATE_FORMAT(employee_date_of_birth, '%m-%d') = DATE_FORMAT(NOW(), '%m-%d')
+[2023-05-30T13:51:50.712+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-30T13:51:51.163+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-30T13:51:51.186+0000] {sql.py:375} INFO - Running statement: SELECT employee_email, employee_name FROM employee WHERE DATE_FORMAT(employee_date_of_birth, '%m-%d') = DATE_FORMAT(NOW(), '%m-%d'), parameters: None
+[2023-05-30T13:51:51.188+0000] {sql.py:384} INFO - Rows affected: 2
+[2023-05-30T13:51:51.197+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/birthday_dag.py", line 40, in send_birthday_emails
+    with open('/usr/local/airflow/dags/Birthday_template.html', 'r') as template_file:
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/airflow/dags/Birthday_template.html'
+[2023-05-30T13:51:51.232+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=birthday_email_dag, task_id=send_birthday_emails, execution_date=20230526T000000, start_date=20230530T135149, end_date=20230530T135151
+[2023-05-30T13:51:51.282+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 192 for task send_birthday_emails ([Errno 2] No such file or directory: '/usr/local/airflow/dags/Birthday_template.html'; 235)
+[2023-05-30T13:51:51.321+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-05-30T13:51:51.364+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

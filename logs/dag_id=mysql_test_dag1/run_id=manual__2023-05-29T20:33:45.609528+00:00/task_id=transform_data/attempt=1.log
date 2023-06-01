@@ -1,0 +1,52 @@
+[2023-05-29T20:33:49.356+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_test_dag1.transform_data manual__2023-05-29T20:33:45.609528+00:00 [queued]>
+[2023-05-29T20:33:49.369+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_test_dag1.transform_data manual__2023-05-29T20:33:45.609528+00:00 [queued]>
+[2023-05-29T20:33:49.369+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-05-29T20:33:49.396+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): transform_data> on 2023-05-29 20:33:45.609528+00:00
+[2023-05-29T20:33:49.404+0000] {standard_task_runner.py:57} INFO - Started process 630 to run task
+[2023-05-29T20:33:49.412+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'mysql_test_dag1', 'transform_data', 'manual__2023-05-29T20:33:45.609528+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/second_dag.py', '--cfg-path', '/tmp/tmpl8z9e85j']
+[2023-05-29T20:33:49.414+0000] {standard_task_runner.py:85} INFO - Job 48: Subtask transform_data
+[2023-05-29T20:33:49.480+0000] {task_command.py:410} INFO - Running <TaskInstance: mysql_test_dag1.transform_data manual__2023-05-29T20:33:45.609528+00:00 [running]> on host 108150c21365
+[2023-05-29T20:33:49.660+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='mysql_test_dag1' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2023-05-29T20:33:45.609528+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-29T20:33:45.609528+00:00'
+[2023-05-29T20:33:49.677+0000] {base.py:73} INFO - Using connection ID 'hrms' for task execution.
+[2023-05-29T20:33:49.681+0000] {sql.py:375} INFO - Running statement: SELECT * FROM employee;, parameters: None
+[2023-05-29T20:33:49.682+0000] {sql.py:384} INFO - Rows affected: 35
+[2023-05-29T20:33:49.683+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.683+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.683+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.683+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.683+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.684+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.685+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.686+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.686+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.686+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.687+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.687+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.687+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.687+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.687+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('John Doe', datetime.date(1985, 2, 15), 'john.doe@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Jane Smith', datetime.date(1990, 9, 21), 'jane.smith@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Michael Johnson', datetime.date(1988, 7, 7), 'michael.johnson@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('Emily Brown', datetime.date(1995, 4, 12), 'emily.brown@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - this is the query of the employee table ('William Davis', datetime.date(1982, 11, 30), 'william.davis@example.com')
+[2023-05-29T20:33:49.688+0000] {logging_mixin.py:149} INFO - Transformed data
+[2023-05-29T20:33:49.688+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-05-29T20:33:49.701+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=mysql_test_dag1, task_id=transform_data, execution_date=20230529T203345, start_date=20230529T203349, end_date=20230529T203349
+[2023-05-29T20:33:49.742+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-05-29T20:33:49.801+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check
